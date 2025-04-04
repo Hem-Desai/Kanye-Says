@@ -1,67 +1,82 @@
-'use client'
+"use client";
 
-import { useState, useEffect, useMemo } from 'react'
-import { motion, AnimatePresence } from 'framer-motion'
-import { Button } from "@/components/ui/button"
-import { Card, CardContent, CardDescription, CardFooter, CardHeader, CardTitle } from "@/components/ui/card"
-import { Input } from "@/components/ui/input"
-import { RefreshCw, Quote, Search, X } from 'lucide-react'
+import { useState, useEffect, useMemo } from "react";
+import { motion, AnimatePresence } from "framer-motion";
+import { Button } from "@/components/ui/button";
+import {
+  Card,
+  CardContent,
+  CardDescription,
+  CardFooter,
+  CardHeader,
+  CardTitle,
+} from "@/components/ui/card";
+import { Input } from "@/components/ui/input";
+import { RefreshCw, Quote, Search, X } from "lucide-react";
 
 export function Page() {
-  const [quotes, setQuotes] = useState<string[]>([])
-  const [filteredQuotes, setFilteredQuotes] = useState<string[]>([])
-  const [currentQuote, setCurrentQuote] = useState<string>('')
-  const [searchTerm, setSearchTerm] = useState<string>('')
-  const [isLoading, setIsLoading] = useState<boolean>(false)
-  const [isSearchOpen, setIsSearchOpen] = useState<boolean>(false)
+  const [quotes, setQuotes] = useState<string[]>([]);
+  const [filteredQuotes, setFilteredQuotes] = useState<string[]>([]);
+  const [currentQuote, setCurrentQuote] = useState<string>("");
+  const [searchTerm, setSearchTerm] = useState<string>("");
+  const [isLoading, setIsLoading] = useState<boolean>(false);
+  const [isSearchOpen, setIsSearchOpen] = useState<boolean>(false);
 
-  const fetchQuotes = useMemo(() => async () => {
-    setIsLoading(true)
-    try {
-      const response = await fetch('https://api.kanye.rest/quotes')
-      const data = await response.json()
-      setQuotes(data)
-      setFilteredQuotes(data)
-      setCurrentQuote(data[Math.floor(Math.random() * data.length)])
-    } catch (error) {
-      console.error('Error fetching quotes:', error)
-      setQuotes([])
-      setFilteredQuotes([])
-      setCurrentQuote('Failed to fetch quotes. Please try again.')
-    } finally {
-      setIsLoading(false)
-    }
-  }, [])
+  const fetchQuotes = useMemo(
+    () => async () => {
+      setIsLoading(true);
+      try {
+        const response = await fetch("https://api.kanye.rest/quotes");
+        const data = await response.json();
+        setQuotes(data);
+        setFilteredQuotes(data);
+        setCurrentQuote(data[Math.floor(Math.random() * data.length)]);
+      } catch (error) {
+        console.error("Error fetching quotes:", error);
+        setQuotes([]);
+        setFilteredQuotes([]);
+        setCurrentQuote("Failed to fetch quotes. Please try again.");
+      } finally {
+        setIsLoading(false);
+      }
+    },
+    []
+  );
 
   useEffect(() => {
-    fetchQuotes()
-  }, [fetchQuotes])
+    fetchQuotes();
+  }, [fetchQuotes]);
 
   useEffect(() => {
-    const filtered = quotes.filter(quote => 
+    const filtered = quotes.filter((quote) =>
       quote.toLowerCase().includes(searchTerm.toLowerCase())
-    )
-    setFilteredQuotes(filtered)
-  }, [searchTerm, quotes])
+    );
+    setFilteredQuotes(filtered);
+  }, [searchTerm, quotes]);
 
   const findQuote = () => {
-    const matchingQuote = filteredQuotes[Math.floor(Math.random() * filteredQuotes.length)]
-    setCurrentQuote(matchingQuote || 'No matching quotes found.')
-  }
+    const matchingQuote =
+      filteredQuotes[Math.floor(Math.random() * filteredQuotes.length)];
+    setCurrentQuote(matchingQuote || "No matching quotes found.");
+  };
 
   const handleSearchToggle = () => {
-    setIsSearchOpen(!isSearchOpen)
+    setIsSearchOpen(!isSearchOpen);
     if (isSearchOpen) {
-      setSearchTerm('')
+      setSearchTerm("");
     }
-  }
+  };
 
   return (
     <div className="min-h-screen flex items-center justify-center bg-gradient-to-r from-purple-400 via-pink-500 to-red-500 p-4">
       <Card className="w-full max-w-md relative">
         <CardHeader>
-          <CardTitle className="text-2xl font-bold text-center">Kanye West Quotes</CardTitle>
-          <CardDescription className="text-center">Wisdom from Ye</CardDescription>
+          <CardTitle className="text-2xl font-bold text-center">
+            Kanye West Quotes
+          </CardTitle>
+          <CardDescription className="text-center">
+            Wisdom from Ye
+          </CardDescription>
         </CardHeader>
         <CardContent className="space-y-4">
           <div className="relative">
@@ -82,8 +97,8 @@ export function Page() {
                     className="flex-grow"
                     aria-label="Search quotes"
                   />
-                  <Button 
-                    onClick={findQuote} 
+                  <Button
+                    onClick={findQuote}
                     disabled={isLoading || filteredQuotes.length === 0}
                     size="sm"
                   >
@@ -101,13 +116,13 @@ export function Page() {
           </div>
         </CardContent>
         <CardFooter className="flex justify-center">
-          <Button 
-            onClick={fetchQuotes} 
+          <Button
+            onClick={fetchQuotes}
             disabled={isLoading}
             className="flex items-center"
           >
             <RefreshCw className="mr-2 h-4 w-4" />
-            {isLoading ? 'Loading...' : 'Refresh Quotes'}
+            {isLoading ? "Loading..." : "Refresh Quotes"}
           </Button>
         </CardFooter>
         <Button
@@ -117,9 +132,13 @@ export function Page() {
           className="absolute top-2 right-2 rounded-full"
           aria-label={isSearchOpen ? "Close search" : "Open search"}
         >
-          {isSearchOpen ? <X className="h-4 w-4" /> : <Search className="h-4 w-4" />}
+          {isSearchOpen ? (
+            <X className="h-4 w-4" />
+          ) : (
+            <Search className="h-4 w-4" />
+          )}
         </Button>
       </Card>
     </div>
-  )
+  );
 }
