@@ -28,7 +28,7 @@ export default function KanyeQuotes() {
     "closed"
   );
   const [isImageClicked, setIsImageClicked] = useState<boolean>(false);
-  const [isSoundPlaying, setIsSoundPlaying] = useState<boolean>(false);
+  const [isPlaying, setIsPlaying] = useState(false);
   const audioRef = useRef<HTMLAudioElement | null>(null);
   const soundEffectRef = useRef<HTMLAudioElement | null>(null);
   const mouthAnimationRef = useRef<NodeJS.Timeout | null>(null);
@@ -70,7 +70,7 @@ export default function KanyeQuotes() {
     soundEffectRef.current.play();
 
     // Set sound playing state to true and initial mouth state
-    setIsSoundPlaying(true);
+    setIsPlaying(true);
     setMouthState("open1");
 
     // Start mouth animation while sound is playing
@@ -84,7 +84,7 @@ export default function KanyeQuotes() {
 
     // Add event listener to know when sound ends
     soundEffectRef.current.addEventListener("ended", () => {
-      setIsSoundPlaying(false);
+      setIsPlaying(false);
       setMouthState("closed");
 
       // Clear mouth animation when sound ends
