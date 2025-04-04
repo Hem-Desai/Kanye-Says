@@ -30,9 +30,9 @@ export const metadata: Metadata = {
     "KanyeSays",
     "Wisdom",
   ],
-  authors: [{ name: "Eduardo Rigo", url: "https://eduardev.com" }],
-  creator: "Eduardo Rigo",
-  publisher: "Eduardo Rigo",
+  authors: [{ name: "shrekajerk", url: "https://x.com/shrekajerk" }],
+  creator: "shrekajerk",
+  publisher: "shrekajerk",
   formatDetection: {
     email: false,
     address: false,
@@ -41,11 +41,11 @@ export const metadata: Metadata = {
   openGraph: {
     title: "KanyeSays",
     description: "Your daily dose of Kanye West quotes",
-    url: "https://kanye.eduardev.com",
+    url: "https://kanye-says.vercel.app",
     siteName: "KanyeSays",
     images: [
       {
-        url: "https://kanye.eduardev.com/images/bg.png",
+        url: "/close.png",
         width: 800,
         height: 600,
       },

@@ -322,7 +322,7 @@ export default function KanyeQuotes() {
         className="p-5 absolute bottom-0 right-0"
         href="https://x.com/shrekajerk"
       >
-        <p className="font-mono font-semibold">/hem</p>
+        <p className="font-mono font-semibold">@hem</p>
       </Link>
     </div>
   );
