@@ -248,10 +248,10 @@ export default function KanyeQuotes() {
         >
           <CardHeader>
             <CardTitle className="text-2xl font-bold text-center">
-              Kanye West Quotes
+              KanyeSays
             </CardTitle>
             <CardDescription className="text-center">
-              Wisdom from Ye
+              Your daily dose of Ye
             </CardDescription>
           </CardHeader>
           <CardContent className="space-y-4">
@@ -320,7 +320,7 @@ export default function KanyeQuotes() {
       </div>
       <Link
         className="p-5 absolute bottom-0 right-0"
-        href="https://hemdesai-portfolio.vercel.app/"
+        href="https://x.com/shrekajerk"
       >
         <p className="font-mono font-semibold">/hem</p>
       </Link>

@@ -1,7 +1,7 @@
 import type { Metadata } from "next";
 import localFont from "next/font/local";
 import "./globals.css";
-import { Analytics } from "@vercel/analytics/react"
+import { Analytics } from "@vercel/analytics/react";
 
 const geistSans = localFont({
   src: "./fonts/GeistVF.woff",
@@ -15,45 +15,65 @@ const geistMono = localFont({
 });
 
 export const metadata: Metadata = {
-  generator: 'Next.js',
-  title: 'Kanye Quotes',
-  description: 'Powered by Kanye.REST',
-  applicationName: 'Kanye Quotes',
-  referrer: 'origin-when-cross-origin',
-  keywords: ['Next.js', 'React', 'JavaScript', 'typescript', 'nextjs', 'frontend', 'developer', 'front end', 'programmer'],
-  authors: [{ name: 'Eduardo Rigo', url: 'https://eduardev.com' }],
-  creator: 'Eduardo Rigo',
-  publisher: 'Eduardo Rigo',
+  generator: "Next.js",
+  title: "KanyeSays",
+  description: "Your daily dose of Kanye West quotes",
+  applicationName: "KanyeSays",
+  referrer: "origin-when-cross-origin",
+  keywords: [
+    "Next.js",
+    "React",
+    "JavaScript",
+    "Kanye West",
+    "Ye",
+    "Quotes",
+    "KanyeSays",
+    "Wisdom",
+  ],
+  authors: [{ name: "Eduardo Rigo", url: "https://eduardev.com" }],
+  creator: "Eduardo Rigo",
+  publisher: "Eduardo Rigo",
   formatDetection: {
     email: false,
     address: false,
     telephone: false,
   },
   openGraph: {
-    title: 'Kanye Quotes',
-    description: 'Powered by Kanye.REST',
-    url: 'https://kanye.eduardev.com',
-    siteName: 'Kanye Quotes',
+    title: "KanyeSays",
+    description: "Your daily dose of Kanye West quotes",
+    url: "https://kanye.eduardev.com",
+    siteName: "KanyeSays",
     images: [
       {
-        url: 'https://kanye.eduardev.com/images/bg.png',
+        url: "https://kanye.eduardev.com/images/bg.png",
         width: 800,
         height: 600,
       },
       {
-        url: 'https://kanye.eduardev.com/images/bg-g.png',
+        url: "https://kanye.eduardev.com/images/bg-g.png",
         width: 1800,
         height: 1600,
       },
     ],
-    type: 'website',
+    type: "website",
   },
   icons: {
-    icon: '/favicon.ico',
-    shortcut: '/favicon.ico',
+    icon: [
+      {
+        url: "/close.png",
+        sizes: "32x32",
+        type: "image/png",
+      },
+      {
+        url: "/close.png",
+        sizes: "16x16",
+        type: "image/png",
+      },
+    ],
+    shortcut: "/close.png",
+    apple: "/close.png",
   },
-}
-
+};
 
 export default function RootLayout({
   children,
