@@ -1,36 +1,60 @@
-This is a [Next.js](https://nextjs.org) project bootstrapped with [`create-next-app`](https://nextjs.org/docs/app/api-reference/cli/create-next-app).
+# 🎤 KanyeSays
 
-## Getting Started
+> "I'm not a businessman, I'm a business, man!" - Kanye West
 
-First, run the development server:
+Welcome to KanyeSays - your daily dose of Ye's wisdom! This isn't just another quote generator; it's a whole vibe. Click on Kanye's face, and he'll bless you with his voice of wisdom. 🙌
+
+## 🛠️ Built With
+
+- Next.js 14
+- TypeScript
+- Tailwind CSS
+- Framer Motion
+- [kanye.rest](https://kanye.rest) API
+- A whole lot of Ye energy ⚡
+
+## 🚀 Try It Out
+
+1. Clone this masterpiece:
+
+```bash
+git clone https://github.com/yourusername/kanye-says.git
+```
+
+2. Install the dependencies:
+
+```bash
+npm install
+```
+
+3. Run it like Ye runs to the stage:
 
 ```bash
 npm run dev
-# or
-yarn dev
-# or
-pnpm dev
-# or
-bun dev
 ```
 
-Open [http://localhost:3000](http://localhost:3000) with your browser to see the result.
+4. Open [http://localhost:3000](http://localhost:3000) and let the wisdom flow 🌊
 
-You can start editing the page by modifying `app/page.tsx`. The page auto-updates as you edit the file.
+## 🎨 Preview
 
-This project uses [`next/font`](https://nextjs.org/docs/app/building-your-application/optimizing/fonts) to automatically optimize and load [Geist](https://vercel.com/font), a new font family for Vercel.
+Imagine a beautiful screenshot here... but Ye said "No pictures!"
 
-## Learn More
+## 🤝 Contributing
 
-To learn more about Next.js, take a look at the following resources:
+Got ideas to make this more 🌊? Pull requests are welcome. For major changes, please open an issue first to discuss what you would like to change.
 
-- [Next.js Documentation](https://nextjs.org/docs) - learn about Next.js features and API.
-- [Learn Next.js](https://nextjs.org/learn) - an interactive Next.js tutorial.
+## 📝 License
 
-You can check out [the Next.js GitHub repository](https://github.com/vercel/next.js) - your feedback and contributions are welcome!
+MIT - Because sharing is caring, and Ye loves everyone (most days).
 
-## Deploy on Vercel
+## 🙏 Credits
 
-The easiest way to deploy your Next.js app is to use the [Vercel Platform](https://vercel.com/new?utm_medium=default-template&filter=next.js&utm_source=create-next-app&utm_campaign=create-next-app-readme) from the creators of Next.js.
+- Quotes powered by [kanye.rest](https://kanye.rest)
+- Built by [@shrekajerk](https://x.com/shrekajerk)
+- Inspired by the one and only Ye
 
-Check out our [Next.js deployment documentation](https://nextjs.org/docs/app/building-your-application/deploying) for more details.
+---
+
+> "I feel like I'm too busy writing history to read it." - Kanye West
+
+Remember to star ⭐ this repo if you believe in Ye supremacy!
