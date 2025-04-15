@@ -28,6 +28,7 @@ export default function KanyeQuotes() {
     "closed"
   );
   const [isImageClicked, setIsImageClicked] = useState<boolean>(false);
+  // eslint-disable-next-line @typescript-eslint/no-unused-vars
   const [isPlaying, setIsPlaying] = useState(false);
   const audioRef = useRef<HTMLAudioElement | null>(null);
   const soundEffectRef = useRef<HTMLAudioElement | null>(null);
