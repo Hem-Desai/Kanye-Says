@@ -321,7 +321,8 @@ export default function KanyeQuotes() {
       </div>
       <Link
         className="p-5 absolute bottom-0 right-0"
-        href="https://x.com/shrekajerk"
+        href="https://hemdesai.me"
+        target="_blank"
       >
         <p className="font-mono font-semibold">@hem</p>
       </Link>
